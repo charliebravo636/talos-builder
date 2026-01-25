@@ -1,17 +1,17 @@
-From 14cf7835b300599d9360e1fb598a272998d284e3 Mon Sep 17 00:00:00 2001
+From cc20d48b9b6ecf7a5cd50a529049b1ed168ed3ef Mon Sep 17 00:00:00 2001
 From: charliebravo636 <carlobraun14@googlemail.com>
-Date: Sun, 25 Jan 2026 10:57:17 +0000
+Date: Sun, 25 Jan 2026 23:58:19 +0100
 Subject: [PATCH] Latest Patched for Raspberry Pi 5
 
 ---
- hack/modules-arm64.txt | 349 ++++++++++++++++++-----------------------
- 1 file changed, 156 insertions(+), 193 deletions(-)
+ hack/modules-arm64.txt | 352 ++++++++++++++++++-----------------------
+ 1 file changed, 156 insertions(+), 196 deletions(-)
 
 diff --git a/hack/modules-arm64.txt b/hack/modules-arm64.txt
-index add054060..45dbe3615 100644
+index add054060..29b3a9793 100644
 --- a/hack/modules-arm64.txt
 +++ b/hack/modules-arm64.txt
-@@ -1,207 +1,135 @@
+@@ -1,207 +1,132 @@
  kernel/arch/arm64/lib/xor-neon.ko
 +modules.builtin.bin
 +modules.builtin.modinfo
@@ -33,7 +33,7 @@ index add054060..45dbe3615 100644
  kernel/crypto/async_tx/async_raid6_recov.ko
  kernel/crypto/async_tx/async_tx.ko
 -kernel/crypto/async_tx/async_xor.ko
- kernel/crypto/hkdf.ko
+-kernel/crypto/hkdf.ko
 -kernel/crypto/xor.ko
 -kernel/drivers/acpi/video.ko
 -kernel/drivers/ata/ahci.ko
@@ -57,8 +57,8 @@ index add054060..45dbe3615 100644
  kernel/drivers/crypto/tegra/tegra-se.ko
 -kernel/drivers/gpu/drm/drm_buddy.ko
 -kernel/drivers/gpu/drm/drm_exec.ko
- kernel/drivers/gpu/drm/drm_gpuvm.ko
- kernel/drivers/gpu/drm/drm_panel_backlight_quirks.ko
+-kernel/drivers/gpu/drm/drm_gpuvm.ko
+-kernel/drivers/gpu/drm/drm_panel_backlight_quirks.ko
 -kernel/drivers/gpu/drm/drm_suballoc_helper.ko
 +kernel/drivers/acpi/video.ko
 +kernel/drivers/gpu/drm/vc4/vc4.ko
@@ -325,7 +325,7 @@ index add054060..45dbe3615 100644
  kernel/drivers/vdpa/mlx5/mlx5_vdpa.ko
  kernel/drivers/vdpa/octeon_ep/octep_vdpa.ko
  kernel/drivers/vdpa/solidrun/snet_vdpa.ko
-@@ -211,26 +139,61 @@ kernel/drivers/vdpa/vdpa_sim/vdpa_sim.ko
+@@ -211,26 +136,61 @@ kernel/drivers/vdpa/vdpa_sim/vdpa_sim.ko
  kernel/drivers/vdpa/vdpa_user/vduse.ko
  kernel/drivers/vdpa/vdpa.ko
  kernel/drivers/vdpa/virtio_pci/vp_vdpa.ko
@@ -404,5 +404,5 @@ index add054060..45dbe3615 100644
 +modules.builtin
 \ No newline at end of file
 -- 
-2.43.0
+2.47.3
 

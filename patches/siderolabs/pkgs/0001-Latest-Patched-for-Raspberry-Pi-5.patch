@@ -1,6 +1,6 @@
-From 361ef0133a82fa57dc7332bdf934d0d3c20aacd8 Mon Sep 17 00:00:00 2001
+From 95e453f347885203a98218615a22cbe22b838554 Mon Sep 17 00:00:00 2001
 From: charliebravo636 <carlobraun14@googlemail.com>
-Date: Sun, 25 Jan 2026 10:56:18 +0000
+Date: Sun, 25 Jan 2026 23:59:07 +0100
 Subject: [PATCH] Latest Patched for Raspberry Pi 5
 
 ---
@@ -1254,5 +1254,5 @@ index 6408110..b507e5d 100644
          cd /src
          make mrproper
 -- 
-2.43.0
+2.47.3
 

@@ -73,7 +73,7 @@ patches: patches-pkgs patches-talos
 .PHONY: kernel
 kernel:
 	cd "$(CHECKOUTS_DIRECTORY)/pkgs" && \
-		$(MAKE) -j12 \
+		$(MAKE) -j4 \
 			REGISTRY=$(REGISTRY) USERNAME=$(REGISTRY_USERNAME) PUSH=true \
 			PLATFORM=linux/arm64 \
 			kernel
