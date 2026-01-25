@@ -3,7 +3,7 @@ TALOS_VERSION = v1.12.1
 SBCOVERLAY_VERSION = main
 
 REGISTRY ?= ghcr.io
-REGISTRY_USERNAME ?= talos-rpi5
+REGISTRY_USERNAME ?= charliebravo636
 
 TAG ?= $(shell git describe --tags --exact-match)
 
