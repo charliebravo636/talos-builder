@@ -35,7 +35,7 @@ index 65b3647..4d0109a 100644
  #
  # Automatically generated file; DO NOT EDIT.
 -# Linux/arm64 6.17.7 Kernel Configuration
-+# Linux/arm64 stable_20250916 Kernel Configuration
++# Linux/arm64 6.17.7 Kernel Configuration
  #
  CONFIG_CC_VERSION_TEXT="gcc (GCC) 15.2.0"
  CONFIG_CC_IS_GCC=y
@@ -795,7 +795,6 @@ index 65b3647..4d0109a 100644
 +# CONFIG_SND_RPI_SIMPLE_SOUNDCARD is not set
 +# CONFIG_SND_RPI_WM8804_SOUNDCARD is not set
 +# CONFIG_SND_DACBERRY400 is not set
-+# CONFIG_SND_DESIGNWARE_I2S is not set
  # end of Broadcom
  
  #
