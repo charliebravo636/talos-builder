@@ -57,11 +57,11 @@ checkouts-clean:
 .PHONY: patches-pkgs patches-talos patches
 patches-pkgs:
 	cd "$(CHECKOUTS_DIRECTORY)/pkgs" && \
-		git am "$(PATCHES_DIRECTORY)/siderolabs/pkgs/0001-PATCH-Patched-for-Raspberry-Pi-5.patch"
+		git am "$(PATCHES_DIRECTORY)/siderolabs/pkgs/0001-Latest-Patched-for-Raspberry-Pi-5.patch"
 
 patches-talos:
 	cd "$(CHECKOUTS_DIRECTORY)/talos" && \
-		git am "$(PATCHES_DIRECTORY)/siderolabs/talos/0001-PATCH-Patched-for-Raspberry-Pi-5.patch"
+		git am "$(PATCHES_DIRECTORY)/siderolabs/talos/0001-Latest-Patched-for-Raspberry-Pi-5.patch"
 
 patches: patches-pkgs patches-talos
 
