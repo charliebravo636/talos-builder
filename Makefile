@@ -11,7 +11,7 @@ EXTENSIONS ?= ghcr.io/siderolabs/gvisor:20250505.0@sha256:d7503b59603f030b972ceb
 
 PKG_REPOSITORY = https://github.com/siderolabs/pkgs.git
 TALOS_REPOSITORY = https://github.com/siderolabs/talos.git
-SBCOVERLAY_REPOSITORY = https://github.com/talos-rpi5/sbc-raspberrypi5.git
+SBCOVERLAY_REPOSITORY = https://github.com:charliebravo636/sbc-raspberrypi5.git
 
 CHECKOUTS_DIRECTORY := $(PWD)/checkouts
 PATCHES_DIRECTORY := $(PWD)/patches
