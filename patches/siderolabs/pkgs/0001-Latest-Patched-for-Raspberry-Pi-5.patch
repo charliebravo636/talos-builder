@@ -1,13 +1,13 @@
-From 95e453f347885203a98218615a22cbe22b838554 Mon Sep 17 00:00:00 2001
+From 20405f988be909506636218177b98e0b6fd0e2eb Mon Sep 17 00:00:00 2001
 From: charliebravo636 <carlobraun14@googlemail.com>
-Date: Sun, 25 Jan 2026 23:59:07 +0100
+Date: Sat, 31 Jan 2026 12:46:27 +0100
 Subject: [PATCH] Latest Patched for Raspberry Pi 5
 
 ---
  Pkgfile                   |   6 +-
- kernel/build/config-arm64 | 385 ++++++++++++++++++++++++--------------
+ kernel/build/config-arm64 | 387 ++++++++++++++++++++++++--------------
  kernel/prepare/pkg.yaml   |   6 +-
- 3 files changed, 246 insertions(+), 151 deletions(-)
+ 3 files changed, 247 insertions(+), 152 deletions(-)
 
 diff --git a/Pkgfile b/Pkgfile
 index 8799e13..ebde8e2 100644
@@ -27,9 +27,17 @@ index 8799e13..ebde8e2 100644
    # renovate: datasource=git-tags extractVersion=^libaio-(?<version>.*)$ depName=https://pagure.io/libaio.git
    libaio_version: 0.3.113
 diff --git a/kernel/build/config-arm64 b/kernel/build/config-arm64
-index 65b3647..5fbc2ea 100644
+index 65b3647..3a95654 100644
 --- a/kernel/build/config-arm64
 +++ b/kernel/build/config-arm64
+@@ -1,6 +1,6 @@
+ #
+ # Automatically generated file; DO NOT EDIT.
+-# Linux/arm64 6.17.7 Kernel Configuration
++# Linux/arm64 6.12.47 Kernel Configuration
+ #
+ CONFIG_CC_VERSION_TEXT="gcc (GCC) 15.2.0"
+ CONFIG_CC_IS_GCC=y
 @@ -22,7 +22,7 @@ CONFIG_CC_HAS_NO_PROFILE_FN_ATTR=y
  CONFIG_CC_HAS_COUNTED_BY=y
  CONFIG_CC_HAS_MULTIDIMENSIONAL_NONSTRING=y
