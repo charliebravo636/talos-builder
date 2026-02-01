@@ -1,14 +1,14 @@
-From 82e992c5856fab8edbb88f1cf55229f2a3e61251 Mon Sep 17 00:00:00 2001
+From e877f9425c0c687ec2c7a2e86ed9e0e0a6c1c4cb Mon Sep 17 00:00:00 2001
 From: charliebravo636 <carlobraun14@googlemail.com>
-Date: Sun, 1 Feb 2026 16:17:48 +0100
+Date: Sun, 1 Feb 2026 16:43:16 +0100
 Subject: [PATCH] Latest Patched for Raspberry Pi 5
 
 ---
- hack/modules-arm64.txt | 357 +++++++++++++++++++----------------------
- 1 file changed, 162 insertions(+), 195 deletions(-)
+ hack/modules-arm64.txt | 355 +++++++++++++++++++----------------------
+ 1 file changed, 161 insertions(+), 194 deletions(-)
 
 diff --git a/hack/modules-arm64.txt b/hack/modules-arm64.txt
-index add054060..5a711b629 100644
+index add054060..1240ebb17 100644
 --- a/hack/modules-arm64.txt
 +++ b/hack/modules-arm64.txt
 @@ -1,207 +1,139 @@
@@ -185,9 +185,10 @@ index add054060..5a711b629 100644
  kernel/drivers/net/ethernet/hisilicon/hns/hns_enet_drv.ko
 -kernel/drivers/net/ethernet/hisilicon/hns3/hclge-common.ko
  kernel/drivers/net/ethernet/hisilicon/hns3/hclge.ko
--kernel/drivers/net/ethernet/hisilicon/hns3/hclgevf.ko
--kernel/drivers/net/ethernet/hisilicon/hns3/hnae3.ko
- kernel/drivers/net/ethernet/hisilicon/hns3/hns3.ko
++kernel/drivers/net/ethernet/hisilicon/hns3/hns3.ko
+ kernel/drivers/net/ethernet/hisilicon/hns3/hclgevf.ko
+ kernel/drivers/net/ethernet/hisilicon/hns3/hnae3.ko
+-kernel/drivers/net/ethernet/hisilicon/hns3/hns3.ko
 -kernel/drivers/net/ethernet/intel/e100.ko
 -kernel/drivers/net/ethernet/intel/e1000/e1000.ko
 -kernel/drivers/net/ethernet/intel/e1000e/e1000e.ko
@@ -242,8 +243,6 @@ index add054060..5a711b629 100644
 -kernel/drivers/net/phy/dp83867.ko
 -kernel/drivers/net/usb/r8152.ko
 -kernel/drivers/net/vmxnet3/vmxnet3.ko
-+kernel/drivers/net/ethernet/hisilicon/hns3/hclgevf.ko
-+kernel/drivers/net/ethernet/hisilicon/hns3/hnae3.ko												   
 +kernel/drivers/net/ethernet/hisilicon/hns3/hclge-common.ko
 +kernel/drivers/net/ethernet/hisilicon/hns_mdio.ko
 +kernel/drivers/net/ethernet/hisilicon/hix5hd2_gmac.ko
@@ -300,7 +299,7 @@ index add054060..5a711b629 100644
 +kernel/drivers/irqchip/irq-imx-mu-msi.ko
 +kernel/drivers/input/misc/uinput.ko
 +kernel/drivers/mailbox/bcm-flexrm-mailbox.ko
-+kernel/drivers/hwmon/i5k_amb.ko							   
++kernel/drivers/hwmon/i5k_amb.ko
  kernel/drivers/scsi/fcoe/libfcoe.ko
 -kernel/drivers/scsi/hisi_sas/hisi_sas_main.ko
 +kernel/drivers/scsi/mpi3mr/mpi3mr.ko
