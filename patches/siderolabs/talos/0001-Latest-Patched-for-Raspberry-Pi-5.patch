@@ -1,17 +1,17 @@
-From 70b22acb0df4c95b553fb594c4a07f834528f8f6 Mon Sep 17 00:00:00 2001
+From 82e992c5856fab8edbb88f1cf55229f2a3e61251 Mon Sep 17 00:00:00 2001
 From: charliebravo636 <carlobraun14@googlemail.com>
-Date: Sat, 31 Jan 2026 12:45:56 +0100
+Date: Sun, 1 Feb 2026 16:17:48 +0100
 Subject: [PATCH] Latest Patched for Raspberry Pi 5
 
 ---
- hack/modules-arm64.txt | 352 ++++++++++++++++++-----------------------
- 1 file changed, 156 insertions(+), 196 deletions(-)
+ hack/modules-arm64.txt | 357 +++++++++++++++++++----------------------
+ 1 file changed, 162 insertions(+), 195 deletions(-)
 
 diff --git a/hack/modules-arm64.txt b/hack/modules-arm64.txt
-index add054060..29b3a9793 100644
+index add054060..5a711b629 100644
 --- a/hack/modules-arm64.txt
 +++ b/hack/modules-arm64.txt
-@@ -1,207 +1,132 @@
+@@ -1,207 +1,139 @@
  kernel/arch/arm64/lib/xor-neon.ko
 +modules.builtin.bin
 +modules.builtin.modinfo
@@ -187,7 +187,7 @@ index add054060..29b3a9793 100644
  kernel/drivers/net/ethernet/hisilicon/hns3/hclge.ko
 -kernel/drivers/net/ethernet/hisilicon/hns3/hclgevf.ko
 -kernel/drivers/net/ethernet/hisilicon/hns3/hnae3.ko
--kernel/drivers/net/ethernet/hisilicon/hns3/hns3.ko
+ kernel/drivers/net/ethernet/hisilicon/hns3/hns3.ko
 -kernel/drivers/net/ethernet/intel/e100.ko
 -kernel/drivers/net/ethernet/intel/e1000/e1000.ko
 -kernel/drivers/net/ethernet/intel/e1000e/e1000e.ko
@@ -242,6 +242,8 @@ index add054060..29b3a9793 100644
 -kernel/drivers/net/phy/dp83867.ko
 -kernel/drivers/net/usb/r8152.ko
 -kernel/drivers/net/vmxnet3/vmxnet3.ko
++kernel/drivers/net/ethernet/hisilicon/hns3/hclgevf.ko
++kernel/drivers/net/ethernet/hisilicon/hns3/hnae3.ko												   
 +kernel/drivers/net/ethernet/hisilicon/hns3/hclge-common.ko
 +kernel/drivers/net/ethernet/hisilicon/hns_mdio.ko
 +kernel/drivers/net/ethernet/hisilicon/hix5hd2_gmac.ko
@@ -295,6 +297,10 @@ index add054060..29b3a9793 100644
 -kernel/drivers/perf/hisilicon/hisi_uncore_sllc_pmu.ko
 -kernel/drivers/perf/hisilicon/hisi_uncore_uc_pmu.ko
 -kernel/drivers/perf/hisilicon/hns3_pmu.ko
++kernel/drivers/irqchip/irq-imx-mu-msi.ko
++kernel/drivers/input/misc/uinput.ko
++kernel/drivers/mailbox/bcm-flexrm-mailbox.ko
++kernel/drivers/hwmon/i5k_amb.ko							   
  kernel/drivers/scsi/fcoe/libfcoe.ko
 -kernel/drivers/scsi/hisi_sas/hisi_sas_main.ko
 +kernel/drivers/scsi/mpi3mr/mpi3mr.ko
@@ -325,7 +331,7 @@ index add054060..29b3a9793 100644
  kernel/drivers/vdpa/mlx5/mlx5_vdpa.ko
  kernel/drivers/vdpa/octeon_ep/octep_vdpa.ko
  kernel/drivers/vdpa/solidrun/snet_vdpa.ko
-@@ -211,26 +136,61 @@ kernel/drivers/vdpa/vdpa_sim/vdpa_sim.ko
+@@ -211,26 +143,61 @@ kernel/drivers/vdpa/vdpa_sim/vdpa_sim.ko
  kernel/drivers/vdpa/vdpa_user/vduse.ko
  kernel/drivers/vdpa/vdpa.ko
  kernel/drivers/vdpa/virtio_pci/vp_vdpa.ko
