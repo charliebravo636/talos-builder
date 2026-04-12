@@ -21,8 +21,8 @@ REF="$1"
 REPO="raspberrypi/linux"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
-PKGS_PATCH="${REPO_ROOT}/patches/siderolabs/pkgs/0001-Patched-for-Raspberry-Pi-5.patch"
-SBC_PATCH="${REPO_ROOT}/patches/siderolabs/sbc-raspberrypi/0001-Patched-for-Raspberry-Pi-5.patch"
+PKGS_PATCH="${REPO_ROOT}/patches/siderolabs/pkgs/0001-Patched-for-Raspberry-Pi-5-v12.6.patch"
+SBC_PATCH="${REPO_ROOT}/patches/siderolabs/sbc-raspberrypi/0001-Patched-for-Raspberry-Pi-5-v12.6.patch"
 
 for f in "$PKGS_PATCH" "$SBC_PATCH"; do
     if [ ! -f "$f" ]; then
