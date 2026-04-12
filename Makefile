@@ -11,7 +11,9 @@ SED ?= sed
 ASSET_TYPE ?= rpi_5
 CONFIG_TXT ?= dtparam=i2c_arm=on
 
-EXTENSIONS ?=
+EXTENSIONS := "ghcr.io/siderolabs/gvisor:20260202.0@sha256:8ce3f5f6ec6280e3931c6b7d5d79da15496177d2e1b180e83d300909501623f6"
+EXTENSIONS += "ghcr.io/siderolabs/iscsi-tools:v0.2.0@sha256:ace4f05eb2073aedfe08d5dadaf7f3c02e4a669ffe28b64cd4863ecf44e91bb9"
+EXTENSIONS += "ghcr.io/siderolabs/util-linux-tools:2.41.2@sha256:8433604b21ec56871b00f363008ab455b2ece264246be915a2d6f742ec90ffcb"
 EXTENSION_ARGS := $(foreach ext,$(EXTENSIONS),--system-extension-image $(ext))
 
 EXTRA_KERNEL_ARGS ?=
@@ -33,6 +35,7 @@ SBCOVERLAY_TAG ?= $(shell cd $(CHECKOUTS_DIRECTORY)/sbc-raspberrypi && git descr
 #
 .PHONY: help
 help:
+	@echo "debug            : Show Debug Variables"
 	@echo "checkouts        : Clone repositories required for the build"
 	@echo "patches          : Apply all patches for Raspberry Pi 5"
 	@echo "kernel           : Build kernel"
@@ -44,6 +47,12 @@ help:
 	@echo "image            : Build disk image for Raspberry Pi 5"
 	@echo "pi5              : Full build pipeline for Raspberry Pi 5"
 	@echo "clean            : Clean up any remains"
+#
+# Debug
+#
+.PHONY: debug
+debug:
+	echo "The Extensions are: $(EXTENSION_ARGS)"
 
 #
 # Checkouts
