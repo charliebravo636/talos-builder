@@ -74,7 +74,7 @@ patches-talos:
 
 patches-sbc-raspberrypi:
 	cd "$(CHECKOUTS_DIRECTORY)/sbc-raspberrypi" && \
-		git am "$(PATCHES_DIRECTORY)/siderolabs/sbc-raspberrypi/0001-Patched-for-Raspberry-Pi-5i-v12.6.patch"
+		git am "$(PATCHES_DIRECTORY)/siderolabs/sbc-raspberrypi/0001-Patched-for-Raspberry-Pi-5-v12.6.patch"
 
 patches: patches-pkgs patches-talos patches-sbc-raspberrypi
 
