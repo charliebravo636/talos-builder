@@ -21,7 +21,7 @@ REF="$1"
 REPO="raspberrypi/linux"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
-PKGS_PATCH="${REPO_ROOT}/patches/siderolabs/pkgs/0001-Patched-for-Raspberry-Pi-5-v12.6.patch"
+PKGS_PATCH="${REPO_ROOT}/patches/siderolabs/pkgs/0001-PATCH-Patched-for-Raspberry-Pi5-Added-4K-Pages-and-Z.patch"
 SBC_PATCH="${REPO_ROOT}/patches/siderolabs/sbc-raspberrypi/0001-Patched-for-Raspberry-Pi-5-v12.6.patch"
 
 for f in "$PKGS_PATCH" "$SBC_PATCH"; do
