@@ -1,5 +1,5 @@
-PKG_VERSION := v1.12.0
-TALOS_VERSION := v1.12.6
+PKG_VERSION := v1.13.0
+TALOS_VERSION := v1.13.6
 SBCOVERLAY_VERSION := v0.2.0
 
 PUSH ?= true
@@ -11,9 +11,9 @@ SED ?= sed
 ASSET_TYPE ?= rpi_5
 CONFIG_TXT ?= dtparam=i2c_arm=on
 
-EXTENSIONS := "ghcr.io/siderolabs/gvisor:20260202.0@sha256:8ce3f5f6ec6280e3931c6b7d5d79da15496177d2e1b180e83d300909501623f6"
-EXTENSIONS += "ghcr.io/siderolabs/iscsi-tools:v0.2.0@sha256:ace4f05eb2073aedfe08d5dadaf7f3c02e4a669ffe28b64cd4863ecf44e91bb9"
-EXTENSIONS += "ghcr.io/siderolabs/util-linux-tools:2.41.2@sha256:8433604b21ec56871b00f363008ab455b2ece264246be915a2d6f742ec90ffcb"
+EXTENSIONS := "ghcr.io/siderolabs/gvisor:20260622.0@sha256:9ceeb9e8950dae906e9d1219e2745ac3866e5041ca0d0f72680cca0fb20d13fd"
+EXTENSIONS += "ghcr.io/siderolabs/iscsi-tools:v0.2.0@sha256:6dcc959cb165826261a40b453277aea5b75dcc4ffe583058a2a42be7abb74e81"
+EXTENSIONS += "ghcr.io/siderolabs/util-linux-tools:2.41.4@sha256:f60939819154f68fe7d8bfa3f8fd0c519d61babe2f547b39b64839c1ad9a3001"
 EXTENSION_ARGS := $(foreach ext,$(EXTENSIONS),--system-extension-image $(ext))
 
 EXTRA_KERNEL_ARGS ?=
@@ -74,18 +74,41 @@ checkouts-clean:
 .PHONY: patches-pkgs patches-talos patches-sbc-raspberrypi patches patches
 patches-pkgs:
 	cd "$(CHECKOUTS_DIRECTORY)/pkgs" && \
-		git am "$(PATCHES_DIRECTORY)/siderolabs/pkgs/0001-PATCH-Patched-for-Raspberry-Pi5-Added-4K-Pages-and-Z.patch"
+		git am "$(PATCHES_DIRECTORY)/siderolabs/pkgs/0001-Patched-for-Raspberry-Pi5.patch"
+		  # Using other SED Interpreter for Building, if your own sed is diffierent, like gsed
+		git am "$(PATCHES_DIRECTORY)/siderolabs/pkgs/0002-Support-alternative-sed-interpreter.patch"
 
 patches-talos:
 	cd "$(CHECKOUTS_DIRECTORY)/talos" && \
-		git am "$(PATCHES_DIRECTORY)/siderolabs/talos/0001-Patched-for-Raspberry-Pi-5-v12.6.patch" && \
-		git am "$(PATCHES_DIRECTORY)/siderolabs/talos/0002-Makefile-v12.6.patch"
+		git am "$(PATCHES_DIRECTORY)/siderolabs/talos/0001-Patched-for-Raspberry-Pi-5.patch" && \
+		git am "$(PATCHES_DIRECTORY)/siderolabs/talos/0002-Makefile.patch"
 
 patches-sbc-raspberrypi:
 	cd "$(CHECKOUTS_DIRECTORY)/sbc-raspberrypi" && \
-		git am "$(PATCHES_DIRECTORY)/siderolabs/sbc-raspberrypi/0001-Patched-for-Raspberry-Pi-5-v12.6.patch"
+		git am "$(PATCHES_DIRECTORY)/siderolabs/sbc-raspberrypi/0001-Patched-for-Raspberry-Pi-5.patch"
 
-patches: patches-pkgs patches-talos patches-sbc-raspberrypi
+patches-linux:
+	# Remove patches targeting mainline kernel which are N/A in this vendor kernel
+	rm -f "$(CHECKOUTS_DIRECTORY)/pkgs/kernel/build/patches/0001-net-macb-flush-PCIe-posted-write-after-TSTART-doorbe.patch"
+	rm -f "$(CHECKOUTS_DIRECTORY)/pkgs/kernel/build/patches/0002-net-macb-re-check-ISR-after-IER-re-enable-in-macb_tx.patch"
+	rm -f "$(CHECKOUTS_DIRECTORY)/pkgs/kernel/build/patches/0002-net-macb-insert-PCIe-read-barrier-before-TX-completi.patch"
+	rm -f "$(CHECKOUTS_DIRECTORY)/pkgs/kernel/build/patches/0003-net-macb-add-TX-stall-watchdog-as-defence-in-depth-s.patch"
+	rm -f "$(CHECKOUTS_DIRECTORY)/pkgs/kernel/build/patches/0003-net-macb-add-TX-stall-watchdog-to-recover-from-lost-.patch"
+	# Another restart trigger is already defined in driver
+	rm -f "$(CHECKOUTS_DIRECTORY)/pkgs/kernel/build/patches/0003-net-macb-gate-TX-stall-watchdog.patch
+	# Already implemented
+	rm -f "$(CHECKOUTS_DIRECTORY)/pkgs/kernel/build/patches/0002-net-macb-drop-destructive-ISR-read.patch
+	# Already implemented
+	rm -f "$(CHECKOUTS_DIRECTORY)/pkgs/kernel/build/patches/0001-net-macb-gate-PCIe-posted-write-flush.patch
+	
+	@if [ -d "$(PATCHES_DIRECTORY)/linux" ] && ls "$(PATCHES_DIRECTORY)/linux"/*.patch >/dev/null 2>&1; then \
+		mkdir -p "$(CHECKOUTS_DIRECTORY)/pkgs/kernel/build/patches" && \
+		cp -v "$(PATCHES_DIRECTORY)/linux"/*.patch "$(CHECKOUTS_DIRECTORY)/pkgs/kernel/build/patches/"; \
+	else \
+		echo "No local kernel patches in $(PATCHES_DIRECTORY)/linux, skipping"; \
+	fi
+
+patches: patches-pkgs patches-talos patches-sbc-raspberrypi patches-linux
 
 # Backwards-compatible alias
 patches: patches
