@@ -1,7 +1,7 @@
-From ae1208e7bd22f2f3721d24bc33269621144cf83f Mon Sep 17 00:00:00 2001
+From 4c6bf2cd6c54cfb192789dd609b14a78cc49b9a3 Mon Sep 17 00:00:00 2001
 From: charliebravo636 <carlobraun14@googlemail.com>
-Date: Sun, 26 Jul 2026 20:20:35 +0000
-Subject: [PATCH] [PATCHED] Patched for Raspberry Pi 5 Makefile
+Date: Sun, 26 Jul 2026 21:26:31 +0000
+Subject: [PATCH] [PATCH] Support alternative sed interpreter
 
 ---
  Makefile | 5 +++--
