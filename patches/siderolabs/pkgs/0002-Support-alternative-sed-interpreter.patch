@@ -1,14 +1,14 @@
-From 4c6bf2cd6c54cfb192789dd609b14a78cc49b9a3 Mon Sep 17 00:00:00 2001
+From 9586a6d90bf687e54359a094e09329375e9c2557 Mon Sep 17 00:00:00 2001
 From: charliebravo636 <carlobraun14@googlemail.com>
-Date: Sun, 26 Jul 2026 21:26:31 +0000
-Subject: [PATCH] [PATCH] Support alternative sed interpreter
+Date: Sun, 26 Jul 2026 21:39:48 +0000
+Subject: [PATCH] [PATCH] Alternative sed interpreter
 
 ---
  Makefile | 5 +++--
  1 file changed, 3 insertions(+), 2 deletions(-)
 
 diff --git a/Makefile b/Makefile
-index 8671ffe..111c16d 100644
+index 8671ffe722143f4e1a11102048fc6d5dde4aa95f..111c16d46c41c29c6d32b2ea5757539519a6cafa 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -4,6 +4,7 @@
