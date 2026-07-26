@@ -79,8 +79,7 @@ checkouts-clean:
 .PHONY: patches-pkgs patches-talos patches-sbc-raspberrypi patches patches
 patches-pkgs:
 	cd "$(CHECKOUTS_DIRECTORY)/pkgs" && \
-		git am "$(PATCHES_DIRECTORY)/siderolabs/pkgs/0001-Patched-for-Raspberry-Pi5.patch"
-		  # Using other SED Interpreter for Building, if your own sed is diffierent, like gsed
+		git am "$(PATCHES_DIRECTORY)/siderolabs/pkgs/0001-Patched-for-Raspberry-Pi5.patch" && \
 		git am "$(PATCHES_DIRECTORY)/siderolabs/pkgs/0002-Support-alternative-sed-interpreter.patch"
 
 patches-talos:
