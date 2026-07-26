@@ -1,7 +1,7 @@
-From 9586a6d90bf687e54359a094e09329375e9c2557 Mon Sep 17 00:00:00 2001
+From f1b2aaf062443be1de39458a61c0c42f82197814 Mon Sep 17 00:00:00 2001
 From: charliebravo636 <carlobraun14@googlemail.com>
-Date: Sun, 26 Jul 2026 21:39:48 +0000
-Subject: [PATCH] [PATCH] Alternative sed interpreter
+Date: Sun, 26 Jul 2026 22:10:51 +0000
+Subject: [PATCH] [PATCH] Support alternative sed interpreter
 
 ---
  Makefile | 5 +++--
