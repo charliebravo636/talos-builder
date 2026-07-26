@@ -23,8 +23,8 @@ index a811000..937c12b 100644
 -  linux_sha512: c3e7bdd4e8cbd33282f29f0b4c11a707748f4785b9b301fcd93a1424a0989661c4499d1c8ffe15fa224175ea551a97bdddf3db7c1d7ad9b3e3a94dec0372cf37
 +  # # rpi-6.18.y branch, commit 73ad03c (2026-07-14), kernel 6.18.38
 +  linux_version: 73ad03c8b5d339027327a518eef885528722a667
-+  linux_sha256: 736469f6c29cb41064ccdedbb665c09c0c6c36e0d1383b88cd0853c57b0aa3e0 
-+  linux_sha512: a3152ec1dcbf0e227c735c769ed9a3c36fe70861e6e679a9b9ee97e5d992add33520c706fea5ae7362bd204d2cd6c015c5a26aeb9a75a37502f8018c0afebd0b 
++  linux_sha256: 736469f6c29cb41064ccdedbb665c09c0c6c36e0d1383b88cd0853c57b0aa3e0
++  linux_sha512: a3152ec1dcbf0e227c735c769ed9a3c36fe70861e6e679a9b9ee97e5d992add33520c706fea5ae7362bd204d2cd6c015c5a26aeb9a75a37502f8018c0afebd0b
  
    # renovate: datasource=git-tags extractVersion=^libaio-(?<version>.*)$ depName=https://pagure.io/libaio.git
    libaio_version: 0.3.113
@@ -794,7 +794,7 @@ index 6c6e61d..acde51b 100644
 -      - url: https://cdn.kernel.org/pub/linux/kernel/v{{ regexReplaceAll "(\\d+)(.\\d+)(\\.\\d+)?$" .linux_version "${1}" }}.x/linux-{{ .linux_version }}.tar.xz
 -        destination: linux.tar.xz
 +      - url: "https://github.com/raspberrypi/linux/archive/{{ .linux_version }}.tar.gz"
-+        destination: linux.tar.gz  
++        destination: linux.tar.gz
          sha256: "{{ .linux_sha256 }}"
          sha512: "{{ .linux_sha512 }}"
        - url: https://github.com/a13xp0p0v/kernel-hardening-checker/archive/{{ .kspp_ref }}.tar.gz
