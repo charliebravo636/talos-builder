@@ -54,6 +54,9 @@ help:
 .PHONY: debug
 debug:
 	echo "The Extensions are: $(EXTENSION_ARGS)"
+	@echo "Tag: $(PKGS_TAG)"
+	@echo "Tag: $(TALOS_TAG)"
+	@echo "Tag: $(SBCOVERLAY_TAG)"
 
 #
 # Checkouts

@@ -1,14 +1,14 @@
-From f2c7a28777640251f799b915d77a4ff5c9197fe6 Mon Sep 17 00:00:00 2001
-From: local-build <local@build>
-Date: Sun, 17 May 2026 12:13:34 -0500
-Subject: [PATCH 2/2] Support alternative sed interpreter
+From ae1208e7bd22f2f3721d24bc33269621144cf83f Mon Sep 17 00:00:00 2001
+From: charliebravo636 <carlobraun14@googlemail.com>
+Date: Sun, 26 Jul 2026 20:20:35 +0000
+Subject: [PATCH] [PATCHED] Patched for Raspberry Pi 5 Makefile
 
 ---
  Makefile | 5 +++--
  1 file changed, 3 insertions(+), 2 deletions(-)
 
 diff --git a/Makefile b/Makefile
-index f42e082..83bceb3 100644
+index 8671ffe..111c16d 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -4,6 +4,7 @@
@@ -31,4 +31,5 @@ index f42e082..83bceb3 100644
  USERNAME ?= siderolabs
  REGISTRY_AND_USERNAME ?= $(REGISTRY)/$(USERNAME)
 -- 
-2.50.1 (Apple Git-155)
+2.43.0
+
