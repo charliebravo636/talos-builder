@@ -1,7 +1,7 @@
-From 29e731fce087b21e3324005336539f9c92de242a Mon Sep 17 00:00:00 2001
-From: local-build <local@build>
-Date: Wed, 8 Apr 2026 12:19:06 -0500
-Subject: [PATCH] Patched for Raspberry Pi 5
+From a794db571e45007f1fc027a8b7686ba998d8f503 Mon Sep 17 00:00:00 2001
+From: charliebravo636 <carlobraun14@googlemail.com>
+Date: Sat, 8 Aug 2026 17:16:47 +0000
+Subject: [PATCH] [PATCH] Patched for Raspberry Pi 5
 
 ---
  Pkgfile                            |  8 ++++----
@@ -10,7 +10,7 @@ Subject: [PATCH] Patched for Raspberry Pi 5
  3 files changed, 10 insertions(+), 15 deletions(-)
 
 diff --git a/Pkgfile b/Pkgfile
-index edcb6dd..e2eb864 100644
+index edcb6dd..7558888 100644
 --- a/Pkgfile
 +++ b/Pkgfile
 @@ -13,10 +13,10 @@ vars:
@@ -21,10 +21,10 @@ index edcb6dd..e2eb864 100644
 -  raspberrypi_kernel_version: stable_20250428
 -  raspberrypi_kernel_sha256: c95906cfbc7808de5860c6d86537bea22e3501f600a5209de59a86cb436886f6
 -  raspberrypi_kernel_sha512: 0ed5d490c491e590b5980dccf6fcac0dd3c47accbfacd40d91507c12801cff34fa6a1c68991c8a6c57bb259c909121414766f35a0b11c4bd5d62c3e11d710839
-+  # rpi-6.18.y branch, commit 8fa1bed55110 (2026-04-10), kernel 6.18.21
-+  raspberrypi_kernel_version: 8fa1bed55110
-+  raspberrypi_kernel_sha256: d2ffb5382c1ad2e313a3bd60d2c8fb1b8af025527abe7f95131035c10c2a419f
-+  raspberrypi_kernel_sha512: 565bd11afe89ef3e1955617191c9461b6365c56fef606baceec4ff612e2484d9077d11500ee0b77160f93cd39ec69ab3fce8e0cf76ba3df087903c3c8eff7290
++  # rpi-6.18.y branch, commit 73ad03c (2026-07-14), kernel 6.18.38
++  raspberrypi_kernel_version: 73ad03c8b5d339027327a518eef885528722a667
++  raspberrypi_kernel_sha256: 736469f6c29cb41064ccdedbb665c09c0c6c36e0d1383b88cd0853c57b0aa3e0
++  raspberrypi_kernel_sha512: a3152ec1dcbf0e227c735c769ed9a3c36fe70861e6e679a9b9ee97e5d992add33520c706fea5ae7362bd204d2cd6c015c5a26aeb9a75a37502f8018c0afebd0b
  
    # renovate: datasource=github-tags depName=revolutionpi/linux
    revpi_kernel_version: v6.6.46-rt39-revpi7
@@ -73,4 +73,5 @@ index 9bef001..68d995c 100644
  kernel=u-boot.bin
  # Forces the kernel loading system to assume a 64-bit kernel.
 -- 
-2.50.1 (Apple Git-155)
+2.43.0
+
