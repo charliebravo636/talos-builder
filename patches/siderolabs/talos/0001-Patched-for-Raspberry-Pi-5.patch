@@ -1,12 +1,12 @@
-From 1a9df46e82e004b040bf11b3d69c306a6196bbf4 Mon Sep 17 00:00:00 2001
+From ad27e28760112cee8aa76dcb6190272aa60e11e8 Mon Sep 17 00:00:00 2001
 From: charliebravo636 <carlobraun14@googlemail.com>
-Date: Wed, 19 Aug 2026 19:52:36 +0000
+Date: Thu, 20 Aug 2026 09:45:56 +0000
 Subject: [PATCH] [PATCH] Patched for Raspberry Pi 5
 
 ---
  Makefile               |  12 +-
- hack/modules-arm64.txt | 365 +++++++++++++++++------------------------
- 2 files changed, 162 insertions(+), 215 deletions(-)
+ hack/modules-arm64.txt | 379 ++++++++++++++++++-----------------------
+ 2 files changed, 174 insertions(+), 217 deletions(-)
 
 diff --git a/Makefile b/Makefile
 index 7ffa9d0f7..ac9e09b12 100644
@@ -63,16 +63,29 @@ index 7ffa9d0f7..ac9e09b12 100644
  
  reproducibility-test-iso: $(ARTIFACTS)
 diff --git a/hack/modules-arm64.txt b/hack/modules-arm64.txt
-index a2b5cd64c..4ec0c5be3 100644
+index a2b5cd64c..5aae6a3df 100644
 --- a/hack/modules-arm64.txt
 +++ b/hack/modules-arm64.txt
-@@ -1,244 +1,189 @@
+@@ -1,244 +1,199 @@
 -kernel/arch/arm64/lib/xor-neon.ko
 -kernel/crypto/async_tx/async_memcpy.ko
 -kernel/crypto/async_tx/async_pq.ko
 -kernel/crypto/async_tx/async_raid6_recov.ko
 -kernel/crypto/async_tx/async_tx.ko
 -kernel/crypto/async_tx/async_xor.ko
++modules.builtin.bin
++modules.builtin.modinfo
++modules.builtin.alias.bin
++modules.dep.bin
++modules.alias
++modules.weakdep
++modules.order
++modules.symbols.bin
++modules.dep
++modules.alias.bin
++modules.softdep
++modules.symbols
++modules.devname
 +kernel/crypto/blake2b_generic.ko
  kernel/crypto/hkdf.ko
  kernel/crypto/xor.ko
@@ -462,10 +475,9 @@ index a2b5cd64c..4ec0c5be3 100644
 -kernel/net/openvswitch/vport-gre.ko
 -kernel/net/tls/tls.ko
 +kernel/arch/arm64/lib/xor-neon.ko
-+modules.alias
  modules.builtin
- modules.builtin.modinfo
- modules.order
+-modules.builtin.modinfo
+-modules.order
 -- 
 2.53.0
 
